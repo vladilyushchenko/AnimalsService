@@ -1,0 +1,57 @@
+### Swap cats
+POST http://localhost:8080/odata/v4/AnimalsService/swapCats
+Content-Type: application/json
+
+{
+    "firstId" : "308e71dd-8e81-44d1-b273-9e9ae318bf82", 
+    "secondId" : "5a379566-c05f-453f-b59c-6df73647395c"
+}
+
+### Add Vlad user
+POST http://localhost:8080/odata/v4/AnimalsService/Users
+Content-Type: application/json
+
+{
+    "name": "vaska"
+}
+### id : cebb9a7d-fb08-49a1-8e3c-f94f1d83f1e9
+
+### Add Poly user
+POST http://localhost:8080/odata/v4/AnimalsService/Users
+Content-Type: application/json
+
+{
+    "name": "Poly"
+}
+### id : b198fd41-9fd9-4c57-9980-e927f88062d8
+
+### Add cats for Poly
+POST http://localhost:8080/odata/v4/AnimalsService/Cats
+Content-Type: application/json
+
+{
+    "name": "PolyCat",
+    "owner_ID" : "06e8e5ec-2e14-4bb4-8922-0b09fdb8e8c0",
+    "catbreed" : "bread"
+}
+
+### Add cat for Vlad
+POST http://localhost:8080/odata/v4/AnimalsService/Cats
+Content-Type: application/json
+
+{
+    "name": "VladCat",
+    "owner_ID" : "71f1941d-d2e6-4e38-bef0-3e904c032e39",
+    "catbreed" : "bread"
+}
+
+
+### Add cat for Vlad
+POST http://localhost:8080/odata/v4/AnimalsService/Dogs
+Content-Type: application/json
+
+{
+  "name": "VladCat",
+  "ownerId" : "71f1941d-d2e6-4e38-bef0-3e904c032e39",
+  "dogbreed" : "bread"
+}
