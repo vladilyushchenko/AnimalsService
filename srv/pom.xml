@@ -10,6 +10,11 @@
 	<artifactId>animalsservice</artifactId>
 	<packaging>jar</packaging>
 
+	<properties>
+		<jackson.version>2.12.1</jackson.version>
+		<lombok.version>1.18.20</lombok.version>
+	</properties>
+
 	<name>animalsservice</name>
 
 	<!-- ACTUAL DEPENDENCIES -->
@@ -41,6 +46,23 @@
 			<groupId>com.sap.cds</groupId>
 			<artifactId>cds-starter-cloudfoundry</artifactId>
 		</dependency>
+
+		<!-- LOMBOK  -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- JACKSON FOR SERIALIZING -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

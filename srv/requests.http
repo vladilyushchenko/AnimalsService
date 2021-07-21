@@ -1,5 +1,5 @@
 ### Swap cats
-POST http://localhost:8080/odata/v4/AnimalsService/swapCats
+POST http://localhost:8080/odata/v4/AnimalsService/Users(571ba148-4654-4830-9c1c-f25b97957f8a)/testAction
 Content-Type: application/json
 
 {
@@ -12,27 +12,37 @@ POST http://localhost:8080/odata/v4/AnimalsService/Users
 Content-Type: application/json
 
 {
-    "name": "vaska"
+    "name": "Vlad"
 }
-### id : cebb9a7d-fb08-49a1-8e3c-f94f1d83f1e9
+### id : 35febf21-9f2c-4988-8822-9f36e91acd56
 
-### Add Poly user
+### Add Nom user
 POST http://localhost:8080/odata/v4/AnimalsService/Users
 Content-Type: application/json
 
 {
-    "name": "Poly"
+    "name": "Nom"
 }
-### id : b198fd41-9fd9-4c57-9980-e927f88062d8
+### id : df7831db-2f7f-44ca-9c7d-80f05b41593b
 
-### Add cats for Poly
+### Add cats for Nom
 POST http://localhost:8080/odata/v4/AnimalsService/Cats
 Content-Type: application/json
 
 {
-    "name": "PolyCat",
-    "owner_ID" : "06e8e5ec-2e14-4bb4-8922-0b09fdb8e8c0",
-    "catbreed" : "bread"
+    "name": "NomCat2",
+    "owner_ID" : "df7831db-2f7f-44ca-9c7d-80f05b41593b",
+    "catbreed" : "someCatBreed2"
+}
+
+### Add dogs for Nom
+POST http://localhost:8080/odata/v4/AnimalsService/Dogs
+Content-Type: application/json
+
+{
+  "name": "NomDog1",
+  "owner_ID" : "df7831db-2f7f-44ca-9c7d-80f05b41593b",
+  "dogbreed" : "someDogBreed1"
 }
 
 ### Add cat for Vlad
@@ -51,7 +61,7 @@ POST http://localhost:8080/odata/v4/AnimalsService/Dogs
 Content-Type: application/json
 
 {
-  "name": "VladCat",
-  "ownerId" : "71f1941d-d2e6-4e38-bef0-3e904c032e39",
-  "dogbreed" : "bread"
+  "name": "NomDog1",
+  "owner_ID" : "9c4452dd-5483-4006-bf00-8d5370c2aa24",
+  "dogbreed" : "someDogBread1"
 }

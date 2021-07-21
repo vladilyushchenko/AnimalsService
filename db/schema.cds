@@ -2,6 +2,8 @@
 
     using { cuid } from '@sap/cds/common';
 
+    type AnimalType : String enum { CAT; DOG; };
+
     entity Users : cuid {
         animals : Association to many Animals on animals.owner = $self;
         name : String(100);
@@ -9,15 +11,16 @@
 
     entity Animals : cuid {
         name : String(100);
+        type : AnimalType;
         owner : Association to Users;
     }
 
     entity Cats {
-       animalFields : Association to Animals;
-       catbreed : String(100);
+        animals : Association to Animals;
+        catbreed : String(100);
     }
 
     entity Dogs {
-        animalFields : Association to Animals;
+        animals : Association to Animals;
         dogbreed : String(100);
     }
