@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class DogServiceImpl implements DogsService {
+public class DogsServiceImpl implements DogsService {
 
     private final DogsRepository dogsRepository;
     private final AnimalsService animalsService;
