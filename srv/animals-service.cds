@@ -5,17 +5,9 @@ service AnimalsService @(restrict: [
             { grant: '*', to: 'authenticated-user'}
         ])  {
 
-    entity Users as select from entities.Users {
-        Users.ID,
-        Users.name,
-        Users.animals
-    };
+    entity Users as projection on entities.Users;
 
-    entity Animals as select from entities.Animals {
-        Animals.owner,
-        Animals.type,
-        Animals.ID
-    };
+    entity Animals as projection on entities.Animals;
 
     entity Dogs as select from entities.Dogs {
         Dogs.ID,
