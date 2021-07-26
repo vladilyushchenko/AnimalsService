@@ -27,7 +27,6 @@ public class CatsHandler implements EventHandler {
     private final ObjectMapper mapper;
     private final CatsService catsService;
 
-
     @On(event = EVENT_CREATE, entity = Cats_.CDS_NAME)
     public void createCats(CdsCreateEventContext context) {
         log.info("createCats() with context : " + context.getCqn().entries());
@@ -36,6 +35,7 @@ public class CatsHandler implements EventHandler {
             catsDto = catsService.create(catsDto);
             e.put(Cats.ID, catsDto.getId());
         });
+
         context.setResult(context.getCqn().entries());
     }
 
