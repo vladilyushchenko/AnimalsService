@@ -15,14 +15,14 @@
         owner : Association to Users;
     }
 
-    // DELETE on animals.ID = id to return previous
     entity Cats : cuid {
+        @cascade: { delete }
         animals : Association to Animals on animals.ID = ID;
         catbreed : String(100);
     }
 
-    // DELETE on animals.ID = id to return previous
-    entity Dogs : cuid {
+    entity Dogs : cuid {        
+        @cascade: { delete }
         animals : Association to Animals on animals.ID = ID;
         dogbreed : String(100);
     }

@@ -1,10 +1,9 @@
 package com.leverx.cap.animalsservice.service.impl;
 
+import com.leverx.cap.animalsservice.dto.DogsDto;
 import com.leverx.cap.animalsservice.repository.DogsRepository;
 import com.leverx.cap.animalsservice.service.AnimalsService;
 import com.leverx.cap.animalsservice.service.DogsService;
-import com.leverx.cap.animalsservice.dto.DogsDto;
-import com.leverx.cap.animalsservice.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

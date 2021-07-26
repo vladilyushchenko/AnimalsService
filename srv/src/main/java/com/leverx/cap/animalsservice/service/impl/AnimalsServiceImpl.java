@@ -1,15 +1,12 @@
 package com.leverx.cap.animalsservice.service.impl;
 
-import cds.gen.animalsservice.Animals_;
 import cds.gen.com.sap.animalsservice.entities.Animals;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.leverx.cap.animalsservice.dto.AnimalsDto;
 import com.leverx.cap.animalsservice.dto.SwapOwnersDto;
 import com.leverx.cap.animalsservice.repository.AnimalsRepository;
 import com.leverx.cap.animalsservice.service.AnimalsService;
 import com.leverx.cap.animalsservice.service.UsersService;
-import com.sap.cds.JSONizable;
 import com.sap.cds.services.ErrorStatuses;
 import com.sap.cds.services.ServiceException;
 import lombok.RequiredArgsConstructor;
@@ -39,14 +36,14 @@ public class AnimalsServiceImpl implements AnimalsService {
 
     @Override
     public void swapOwners(SwapOwnersDto swapOwnersDto) {
-        List<Animals> animals = animalsRepository.getAnimalsByIds(Stream
+        List<Animals> animals = animalsRepository.getByIds(Stream
                 .of(swapOwnersDto.getFirstAnimalsId(), swapOwnersDto.getSecondAnimalsId())
                 .collect(toList()));
         if (animals.size() != 2) {
             throw new ServiceException(ErrorStatuses.NOT_FOUND, gson.toJson(swapOwnersDto));
         }
         swapOwnersId(animals.get(0), animals.get(1));
-        animalsRepository.updateAnimalsList(animals);
+        animalsRepository.updateList(animals);
     }
 
     @Override
@@ -54,7 +51,7 @@ public class AnimalsServiceImpl implements AnimalsService {
         if (!usersService.existsById(animalsDto.getOwnerId())) {
             throw new ServiceException(ErrorStatuses.NOT_FOUND, gson.toJson(animalsDto));
         }
-        animalsRepository.updateAnimals(animalsDto);
+        animalsRepository.update(animalsDto);
         return animalsDto;
     }
 
