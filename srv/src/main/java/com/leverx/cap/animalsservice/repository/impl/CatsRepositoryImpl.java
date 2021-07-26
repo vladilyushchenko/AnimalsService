@@ -2,9 +2,9 @@ package com.leverx.cap.animalsservice.repository.impl;
 
 import cds.gen.com.sap.animalsservice.entities.Cats;
 import cds.gen.com.sap.animalsservice.entities.Cats_;
+import com.leverx.cap.animalsservice.dto.CatsDto;
 import com.leverx.cap.animalsservice.mapper.CatsMapper;
 import com.leverx.cap.animalsservice.repository.CatsRepository;
-import com.leverx.cap.animalsservice.dto.CatsDto;
 import com.sap.cds.ql.Insert;
 import com.sap.cds.ql.Update;
 import com.sap.cds.ql.cqn.CqnInsert;
@@ -39,4 +39,5 @@ public class CatsRepositoryImpl implements CatsRepository {
                 .data(mapper.mapCatsDtoToEntityMap(catsDto));
         db.run(update);
     }
+
 }

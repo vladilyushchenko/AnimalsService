@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class AnimalsMapper {
 
-    // TODO: test on all requests
     public Animals mapAnimalsDtoToEntity(AnimalsDto animalsDto) {
         Animals animals = Animals.create();
         animals.setId(animalsDto.getId());

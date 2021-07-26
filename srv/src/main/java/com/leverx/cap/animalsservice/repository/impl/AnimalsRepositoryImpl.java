@@ -39,20 +39,20 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
     }
 
     @Override
-    public void updateAnimals(AnimalsDto animalsDto) {
-        updateAnimalsList(singletonList(mapper.mapAnimalsDtoToEntity(animalsDto)));
+    public void update(AnimalsDto animalsDto) {
+        updateList(singletonList(mapper.mapAnimalsDtoToEntity(animalsDto)));
     }
 
     @Override
-    public void updateAnimalsList(List<Animals> animals) {
+    public void updateList(List<Animals> animals) {
         CqnUpdate updateAnimals = Update
-                .entity(Animals_.class)
+                .entity(Animals_.CDS_NAME)
                 .entries(animals);
         db.run(updateAnimals);
     }
 
     @Override
-    public List<Animals> getAnimalsByIds(List<String> ids) {
+    public List<Animals> getByIds(List<String> ids) {
         CqnSelect selectBothAnimals = Select
                 .from(Animals_.class)
                 .where(a -> a.ID()
@@ -60,11 +60,4 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
         return db.run(selectBothAnimals).listOf(Animals.class);
     }
 
-    @Override
-    public boolean existsById(String id) {
-        CqnSelect select = Select
-                .from(Animals_.CDS_NAME)
-                .byId(id);
-        return db.run(select).rowCount() != 0;
-    }
 }

@@ -9,11 +9,9 @@ public interface AnimalsRepository {
 
     AnimalsDto create(AnimalsDto animalsDto);
 
-    void updateAnimals(AnimalsDto animalsDto);
+    void update(AnimalsDto animalsDto);
 
-    void updateAnimalsList(List<Animals> animals);
+    void updateList(List<Animals> animals);
 
-    List<Animals> getAnimalsByIds(List<String> ids);
-
-    boolean existsById(String id);
+    List<Animals> getByIds(List<String> ids);
 }
