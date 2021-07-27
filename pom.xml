@@ -18,6 +18,12 @@
 		<jdk.version>1.8</jdk.version>
 		<cds.services.version>1.17.0</cds.services.version>
 		<spring.boot.version>2.5.2</spring.boot.version>
+		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+
+		<generated-sources.path>./src/gen/java/</generated-sources.path>
+
+		<lombok.version>1.18.20</lombok.version>
+		<lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
 
 		<node.url>https://nodejs.org/dist/</node.url>
 	</properties>
@@ -65,6 +71,25 @@
 				<configuration>
 					<source>${jdk.version}</source>
 					<target>${jdk.version}</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${org.mapstruct.version}</version>
+						</path>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${lombok.version}</version>
+						</path>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok-mapstruct-binding</artifactId>
+							<version>${lombok.mapstruct.binding.version}</version>
+						</path>
+					</annotationProcessorPaths>
+					<generatedSourcesDirectory>${generated-sources.path}</generatedSourcesDirectory>
+
 				</configuration>
 			</plugin>
 
