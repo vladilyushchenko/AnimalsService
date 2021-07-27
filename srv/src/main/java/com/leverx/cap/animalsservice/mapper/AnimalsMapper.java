@@ -2,17 +2,10 @@ package com.leverx.cap.animalsservice.mapper;
 
 import cds.gen.com.sap.animalsservice.entities.Animals;
 import com.leverx.cap.animalsservice.dto.AnimalsDto;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
 
-@Component
-public class AnimalsMapper {
+@Mapper(uses = AnimalsFactory.class, componentModel = "spring")
+public interface AnimalsMapper {
 
-    public Animals mapAnimalsDtoToEntity(AnimalsDto animalsDto) {
-        Animals animals = Animals.create();
-        animals.setId(animalsDto.getId());
-        animals.setOwnerId(animalsDto.getOwnerId());
-        animals.setName(animalsDto.getName());
-        animals.setType(animalsDto.getType().name());
-        return animals;
-    }
+    Animals mapAnimalsDtoToEntity(AnimalsDto animalsDto);
 }
