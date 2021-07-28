@@ -39,5 +39,4 @@ public class CatsRepositoryImpl implements CatsRepository {
                 .data(mapper.mapCatsDtoToEntity(catsDto));
         db.run(update);
     }
-
 }

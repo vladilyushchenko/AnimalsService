@@ -59,5 +59,4 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
                 .in(ids));
         return db.run(selectBothAnimals).listOf(Animals.class);
     }
-
 }
